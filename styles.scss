@@ -1,0 +1,143 @@
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --light-gray: hsl(0, 0%, 98%);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+// -------------------------Mobile first
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-gray);
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 235px;
+    height: 220px;
+    margin: auto;
+    .title {
+        font-weight: 200;
+        font-size: 18px;
+    }
+    span {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--dark-blue);
+    }
+    .subtitle {
+        font-size: 12px;
+        font-weight: 400;
+        justify-content: center;
+        text-align: center;
+        font-weight: 400;
+        line-height: 20px;
+        color: var(--grayish-blue);
+    }
+}
+
+// Cards
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .card {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 310px;
+        height: 220px;
+        border-radius: 5px;
+        margin: 12px;
+        padding: 28px;
+        box-shadow: 0px 13px 10px 0px rgba(84,157,242,0.2);
+        .card-title {
+            margin-top: -10px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+        p {
+            margin-top: -10px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: var(--grayish-blue);
+        }
+        .card-img {
+            width: 60px;
+            height: 60px;
+            align-self: flex-end;
+            margin-top: 28px;
+        }
+    }
+    .card1 {
+        border-top: 5px solid var(--cyan); 
+    }
+    .card2 {
+        border-top: 5px solid var(--red); 
+    }
+    .card3 {
+        border-top: 5px solid var(--orange); 
+    }
+    .card4 {
+        border-top: 5px solid var(--blue); 
+    }
+}
+
+// ---------------------1440px
+
+@media only screen and (min-width: 1440px) {
+    .title-container {
+        width: 510px;
+        height: 175px;
+        .title {
+            font-size: 28px;
+        }
+        span {
+            font-size:28px;
+        }
+        .subtitle {
+            font-size: 15px;
+        }
+    }
+    .home {
+        width: 1440px;
+        height: 500px;
+        display: grid;
+        grid-template-columns: repeat(3, 310px);
+        grid-template-rows: repeat(2, 220px);
+        grid-column-gap: 28px;
+        grid-row-gap: 28px;
+        margin: 0 auto;
+        // justify-items: center;
+        // align-items: center;
+        place-content: center;
+        .card1 {
+            grid-area: 1 / 1 / 3 / 2;   
+        }
+        .card2 {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+        .card3 {
+            grid-area: 2 / 2 / 3 / 3;
+        }
+        .card4 {
+            grid-area: 1 / 3 / 3 / 4;
+        }
+    }
+}
